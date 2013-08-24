@@ -58,6 +58,8 @@ class CMSMenu extends Object implements IteratorAggregate, i18nEntityProvider
 		
 		// Don't add menu items defined the old way
 		if($urlSegment === null && $controllerClass != "CMSMain") return;
+		
+		if($urlSegment == "assets") $urlSegment = "assets/show/root";
 
 		$link = Controller::join_links($urlBase, $urlSegment) . '/';
 
